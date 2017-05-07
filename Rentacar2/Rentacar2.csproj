@@ -197,6 +197,7 @@
     <Content Include="Views\Autoes\Details.cshtml" />
     <Content Include="Views\Autoes\Edit.cshtml" />
     <Content Include="Views\Autoes\Index.cshtml" />
+    <Content Include="Views\Autoes\SearchIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

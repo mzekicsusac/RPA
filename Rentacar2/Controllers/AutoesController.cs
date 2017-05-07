@@ -115,6 +115,21 @@ namespace Rentacar2.Controllers
             return RedirectToAction("Index");
         }
 
+        // pretraživanje po nazivu auta
+
+        public ActionResult SearchIndex(string searchString)
+        {
+            //ovo je LINQ upit:
+            var autos = from a in db.Autos
+                         select a;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                autos = autos.Where(s => s.NazivAuta.Contains(searchString));
+            }
+
+            return View(autos);
+        }
         protected override void Dispose(bool disposing)
         {
             if (disposing)
@@ -123,5 +138,6 @@ namespace Rentacar2.Controllers
             }
             base.Dispose(disposing);
         }
+
     }
 }
