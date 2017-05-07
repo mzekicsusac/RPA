@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Rentacar2.Models.Auto>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NazivAuta)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GodinaProizvodnje)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NabavnaCijena)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NazivAuta)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GodinaProizvodnje)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NabavnaCijena)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.AutoID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.AutoID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.AutoID })
+        </td>
+    </tr>
+}
+
+</table>
